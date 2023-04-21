@@ -59,6 +59,8 @@ cd ../model
 ./build_datasets.py ../datasets/android/all_data
 ./build_datasets.py ../datasets/web/all_data
 
+./build_datasets.py ../datasets/web/simple_data 1
+
 # transform images (normalized pixel values and resized pictures) in training dataset to numpy arrays (smaller files if you need to upload the set to train your model in the cloud)
 # usage: convert_imgs_to_arrays.py <input path> <output path>
 ./convert_imgs_to_arrays.py ../datasets/ios/training_set ../datasets/ios/training_features
@@ -108,13 +110,13 @@ cd model
 
 # generate DSL code (.gui file), the default search method is greedy
 # usage: sample.py <trained weights path> <trained model name> <input image> <output path> <search method (default: greedy)>
-./sample.py ../bin pix2code ../test_gui.png ../code
+./sample.py ../bin pix2code ../gui_screenshots/test_gui.png ../code
 
 # equivalent to command above
-./sample.py ../bin pix2code ../test_gui.png ../code greedy
+./sample.py ../bin pix2code ../gui_screenshots/test_gui.png ../code greedy
 
 # generate DSL code with beam search and a beam width of size 3
-./sample.py ../bin pix2code ../test_gui.png ../code 3
+./sample.py ../bin pix2code ../gui_screenshots/test_gui.png ../code 3
 ```
 
 Compile generated code to target language:

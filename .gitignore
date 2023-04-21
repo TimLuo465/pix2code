@@ -154,8 +154,12 @@ crashlytics-build.properties
 fabric.properties
 
 # Generated dataset files
-datasets/*
+datasets/ios
+datasets/android
+datasets/web/*
 !datasets/pix2code_datasets.z*
+!datasets/web/simple_data
 
 # Training output
-bin/
+bin/*.h5
+bin/*.npy
